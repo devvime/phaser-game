@@ -1,0 +1,52 @@
+*  
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+body
+  overflow: hidden
+  background-color: #333
+
+img
+  image-rendering: auto
+  image-rendering: crisp-edges
+  image-rendering: pixelated
+  image-rendering: -webkit-optimize-contrast
+
+.score 
+  position: fixed
+  left: 15px
+  top: 10px
+  z-index: 99
+  font-size: 2em
+  margin: 0
+  background-color: rgba(0, 0, 0, 0.3)
+  padding: 5px 10px
+  border-radius: 5px
+  color: white
+
+
+.life 
+  position: fixed
+  right: 15px
+  top: 10px
+  z-index: 99
+  pointer-events: none
+
+
+.game-over-modal 
+  position: fixed
+  z-index: 999
+  left: 0
+  right: 0
+  top: 15%
+  bottom: 0
+  margin: auto
+  padding: 30px
+  border-radius: 5px
+  box-shadow: 2px 5px 10px #333
+  text-align: center
+  background-color: rgba(255, 255, 255, 0.479)
+  width: 100%
+  max-width: 250px
+  height: 15%

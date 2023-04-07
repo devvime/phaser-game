@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack')
 
 module.exports = {
   entry: './src/index.js',
@@ -9,6 +8,35 @@ module.exports = {
     filename: 'game.bundle.js',
   },
   mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+      {
+        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /.(css|sass|scss)$/,
+      },
+      {
+        use: ["html-loader"],
+        test: /\.html$/i,
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'images',
+        },
+      },
+    ]
+  },
   plugins: [new HtmlWebpackPlugin({ 
     template: './index.template.html', 
     minify: {
@@ -22,5 +50,8 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+    historyApiFallback: {
+      index: 'index.html'
+    }
   },
 };

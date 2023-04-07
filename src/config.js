@@ -1,8 +1,8 @@
 export const config = (game) => {
   return {
     type: Phaser.AUTO,
-    width: 1920,
-    height: 600,
+    width: window.innerWidth,
+    height: window.innerHeight,
     physics: {
       default: 'arcade',
       arcade: {
