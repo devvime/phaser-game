@@ -28,9 +28,6 @@ export default class Game {
     Game.cameraConfig(this)    
   }
   update() {
-    if (states.gameOver) {      
-      // this.cameras.main.flash(5000, 220, 20, 60)
-    }
     player.update(this)
   }
   static setCollisions(game) {
@@ -41,7 +38,7 @@ export default class Game {
     game.physics.add.collider(player.states.player, bomb.states.bombs, bomb.hitBomb, null, game)
   }
   static cameraConfig(game) {
-    game.cameras.main.zoom = 1.5
+    game.cameras.main.zoom = 2
     game.cameras.main.setBounds(0, 0, config(game).width, config(game).height);
     game.cameras.main.startFollow(player.states.player)
   }

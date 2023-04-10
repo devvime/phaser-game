@@ -20,6 +20,6 @@ export const bomb = {
     setPlayerLife(player.states.life)
     setTimeout(() => {
       player.states.player.setTint(0xffffff)
-    }, 250);
+    }, 250);    
   }
 }
